@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GoodFood_Projeto</string>
+    <string name="action_settings">Settings</string>
+	<string name="botao_entrar">Entrar</string>
+	<string name="logo">Logo</string>
+	<string name="info">Receitas de comida boa</string>
+</resources>
