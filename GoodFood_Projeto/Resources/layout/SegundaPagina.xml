@@ -2,6 +2,67 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
+<TextView
+        android:id="@+id/txt_2"
+        android:text="@string/indica"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"/>
+
+    <Button
+        android:id="@+id/btn_procurar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/procurar"
+        android:textSize="25sp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#ffFF9F10"
+        android:textColor="#965C05"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textStyle="bold" 
+        />
+
+    <Button
+        android:id="@+id/btn_inserir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/inserir"
+        android:textSize="25sp"
+        android:backgroundTint="#ffFF9F10"
+        android:textColor="#965C05"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textStyle="bold" 
+        />
+
+    <Button
+        android:id="@+id/btn_alterar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alterar"
+        android:textSize="25sp"
+        android:backgroundTint="#ffFF9F10"
+        android:textColor="#965C05"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:textStyle="bold" 
+        />
+
+    <Button
+        android:id="@+id/btn_apagar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/apagar"
+        android:textSize="25sp"
+        android:backgroundTint="#ffFF9F10"
+        android:textColor="#965C05"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:textStyle="bold" 
+        />
 </LinearLayout>

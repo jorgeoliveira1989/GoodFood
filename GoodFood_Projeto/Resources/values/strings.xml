@@ -4,4 +4,10 @@
 	<string name="botao_entrar">Entrar</string>
 	<string name="logo">Logo</string>
 	<string name="info">Receitas de comida boa</string>
+	<string name="indica">Escolha uma das alternativas </string>
+	<string name="procurar">Procurar Receita</string>
+	<string name="inserir">Inserir Receita</string>
+	<string name="alterar">Alterar Receita</string>
+	<string name="apagar">Apagar Receita</string>
+	<string name="regressa">VOLTAR</string>
 </resources>
