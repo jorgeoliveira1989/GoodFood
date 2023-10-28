@@ -60,7 +60,7 @@
             android:textSize="22sp"
             android:layout_width="217.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/button1"
+            android:id="@+id/btn_inserir"
             android:textColor="#965C05"
             android:backgroundTint="#ffFF9F10"
             android:textStyle="bold"
