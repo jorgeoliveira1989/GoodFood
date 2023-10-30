@@ -66,7 +66,7 @@ namespace GoodFood_Projeto
 
                         if (et_receita.Text != "" && et_categoria.Text != "" && et_modo_preparo.Text != "")
                         {
-                            //item.id_receita = spinner_id.SelectedItemId;
+                            item.id_receita = spinner_id.SelectedItemId + 1;
                             item.nome_receita = et_receita.Text ;
                             item.categoria = et_categoria.Text ;
                             item.descricao_receita = et_modo_preparo.Text;
