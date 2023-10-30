@@ -22,11 +22,7 @@ namespace GoodFood_Projeto
         EditText et_categoria;
         EditText et_modo_preparo;
 
-        string dbPath =
-            System.IO.Path.Combine(
-              System.Environment.GetFolderPath(
-                  System.Environment.SpecialFolder.Personal),
-              "receitas.db3");
+        string dbPath =System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal),"receitas.db3");
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

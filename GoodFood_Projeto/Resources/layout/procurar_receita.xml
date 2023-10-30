@@ -25,7 +25,7 @@
         android:background="#ffFF9F10"
         android:gravity="center"
         android:textStyle="bold" />
-</LinearLayout> 
+</LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -35,7 +35,9 @@
         android:id="@+id/linearLayout3"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:textAlignment="center">
+        
 
         <TextView
             android:text="ID:"
@@ -46,25 +48,17 @@
             android:textSize="20sp"
             android:textStyle="bold"
         />
-        <EditText
+
+        <Spinner
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:digits="0123456789" 
-            android:id="@+id/et_id"
-            android:lines="1"
-            android:layout_marginLeft="0.0dp"
-            android:layout_marginRight="10.0dp"
-        />
-        <Button
-            android:text="PROCURAR"
-            android:textSize="22sp"
-            android:layout_width="217.5dp"
-            android:layout_height="match_parent"
-            android:id="@+id/btn_procurar"
-            android:textColor="#965C05"
-            android:backgroundTint="#ffFF9F10"
+            android:layout_height="33dp"
+            android:id="@+id/spinner_id"
+            android:textSize="40sp"
+            android:layout_marginLeft="10.0dp"
+            android:layout_marginRight="1.5dp"
             android:textStyle="bold"
+            android:textAlignment="center"
+            android:tooltipText="Escolha um ID:" 
             />
 
 

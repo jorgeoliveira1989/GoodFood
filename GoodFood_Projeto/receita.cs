@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +46,7 @@ namespace GoodFood_Projeto
 
         public override string ToString()
         {
-            return "id receita: " + id_receita.ToString() + "\n" + "nome receita: " + nome_receita + "\n" + "categoria: " + categoria + "\n" + descricao_receita + "\n";
+            return "id receita: " + id_receita.ToString() + "\n" + "nome receita: " + nome_receita + "\n" + "categoria: " + categoria + "\n" + "Descrição receita" + descricao_receita + "\n";
         }
     }
     
