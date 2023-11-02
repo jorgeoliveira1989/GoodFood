@@ -22,6 +22,7 @@ namespace GoodFood_Projeto
         EditText et_categoria;
         EditText et_modo_preparo;
         JavaList<string> ListaIDs = new JavaList<string>();
+        
 
         string dbPath = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "receitas.db3");
 
@@ -55,52 +56,56 @@ namespace GoodFood_Projeto
 
             try
             {
-
                 var table = db.Table<receita>();
 
-                long id = spinner_id.SelectedItemId;
+                int posicaoSelecionada = spinner_id.SelectedItemPosition; // Obtem a posição selecionada
 
-                string mensagem = "Tem a certeza que quer eliminar a Receita ";
-                string titulo = "Confirmação da Eliminação";
-
-                foreach (var item in table)
+                if (posicaoSelecionada >= 0 && posicaoSelecionada < ListaIDs.Count) // Verifica se a posição é válida
                 {
-                    if (id == item.id_receita)
+                    long id = long.Parse(ListaIDs[posicaoSelecionada]); // Obtém o ID da receita
+
+                    string mensagem = "Tem a certeza que quer eliminar a Receita ";
+                    string titulo = "Confirmação da Eliminação";
+
+                    foreach (var item in table)
                     {
-                        encontraReceita = true;
-                        mensagem += id.ToString() + " ?";
-                        escolheuSim = await AlertAsync(this, titulo, mensagem, "Sim", "Não");
-
-                        if (escolheuSim)
+                        if (id == item.id_receita)
                         {
-                            db.Delete(item);
+                            encontraReceita = true;
+                            mensagem += item.id_receita + " ?";
+                            escolheuSim = await AlertAsync(this, titulo, mensagem, "Sim", "Não");
 
-                            Toast.MakeText(this, "Receita " + item.id_receita.ToString() + " eliminada com sucesso!", ToastLength.Short).Show();
-                            escolheuSim = false;
-                            limparEcra();
-                            break;
+                            if (escolheuSim)
+                            {
+                                db.Delete(item);
+
+                                Toast.MakeText(this, "Receita " + item.id_receita.ToString() + " eliminada com sucesso!", ToastLength.Short).Show();
+                                escolheuSim = false;
+                                limparEcra();
+                                break;
+                            }
+                            else
+                            {
+
+                                Toast.MakeText(this, "Operação " + item.id_receita.ToString() + " cancelada!", ToastLength.Short).Show();
+                                limparEcra();
+                                break;
+                            }
+
                         }
-                        else
-                        {
-
-                            Toast.MakeText(this, "Operação " + item.id_receita.ToString() + " cancelada!", ToastLength.Short).Show();
-                            limparEcra();
-                            break;
-                        }
-
                     }
-                }
 
-                db.Close();
+                    db.Close();
 
-                if (!encontraReceita)
-                {
-                    Toast.MakeText(this, "Receita não encontrada!", ToastLength.Short).Show();
+                    if (!encontraReceita)
+                    {
+                        Toast.MakeText(this, "Receita não encontrada!", ToastLength.Short).Show();
+                    }
                 }
             }
             catch (System.Exception ex)
             {
-
+                // Trate exceções se necessário
             }
         }
             private void Voltar_Click(object sender, EventArgs e)

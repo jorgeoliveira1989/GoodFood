@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static Android.Content.ClipData;
 
 namespace GoodFood_Projeto
 {
@@ -55,8 +56,9 @@ namespace GoodFood_Projeto
             try
             {
                 var table = db.Table<receita>();
-                long id = spinner_id.SelectedItemId;
-
+                // long id = Convert.ToInt64(spinner_id.SelectedItemId.ToString());
+                long id = idSelecionado;
+                //Toast.MakeText(this, "Id2 " + id.ToString() + " Selecionado!", ToastLength.Short).Show();
 
                 foreach (var item in table)
                 {
@@ -67,7 +69,7 @@ namespace GoodFood_Projeto
                         if (et_receita.Text != "" && et_categoria.Text != "" && et_modo_preparo.Text != "")
                         {
                             
-                            item.id_receita = spinner_id.SelectedItemId + 1;
+                            item.id_receita = idSelecionado;
                             item.nome_receita = et_receita.Text ;
                             item.categoria = et_categoria.Text ;
                             item.descricao_receita = et_modo_preparo.Text;
@@ -139,11 +141,12 @@ namespace GoodFood_Projeto
                 var table = db.Table<receita>();
 
                 long id = long.Parse(ListaIDs[e.Position]);
-
+                //Toast.MakeText(this, "Id1 " + id.ToString() + " Selecionado!", ToastLength.Short).Show();
                 foreach (var item in table)
                 {
                     if (id == item.id_receita)
                     {
+                        idSelecionado = id;
                         et_receita.Text = item.nome_receita;
                         et_categoria.Text = item.categoria;
                         et_modo_preparo.Text = item.descricao_receita;
